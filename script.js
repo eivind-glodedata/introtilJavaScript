@@ -45,16 +45,55 @@ console.log(typeof sum);
 // array = en liste av data
 // object = key:value liste av data
 
+//
+console.log("--------------------------------------------------");
+//
+
 function businessCard() {
+
+    //variabler som henter element øverst
+
+    const h2Title = document.getElementById("title");
+    console.log(h2Title);
+    const pDescription = document.querySelector("#description")
+    console.log(pDescription);
+    const imgImage = document.querySelector("#image");
+    console.log(imgImage);
+
+    //variabler som lagrer data i midten
+
     // local scope kun i funksjonen
     console.log("Hei fra inni en funksjon");
     let navn = "Eivind";
     let firstName = "Eivind";
     let lastName = "Berge";
-    const tittel = "student";
-    console.log(`${firstName} ${lastName}, ${tittel}.`)
-    const main = document.querySelector("main");
-    main.textContent = `${firstName} ${lastName}, ${tittel}.`;
+    const fullName = firstName + " " + lastName;
+    console.log(fullName);
+
+    const description = "student";
+    const image = "https://images.unsplash.com/photo-1745905932716-431e50eac74b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    console.log(`${firstName} ${lastName}, ${description}.`)
+   // const main = document.querySelector("main");
+   // main.textContent = `${firstName} ${lastName}, ${description}.`;
+    
+    //Manipulerer variablene sammen (HMS)
+
+    h2Title.textContent = fullName;
+    pDescription.textContent = description;
+    imgImage.src = image;
+    imgImage.alt = "Random pic from Unsplash";
+    imgImage.style.width = "100%";
+    //klassenavn i steden for inlinestyling: imgImage.classList.add = "businessCardImage"
+
+
 }
 
-businessCard();
+
+
+//businessCard();
+
+const button = document.querySelector("#button");
+console.log(button);
+button.addEventListener("click", businessCard);
+
+//shift contr L - multiple cursor cursor cursor
